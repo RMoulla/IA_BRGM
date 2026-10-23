@@ -8,12 +8,14 @@ Ce dépôt rassemble le support de la session, les jeux de données et des noteb
 
 | Ressource | Accès | Données nécessaires |
 | --- | --- | --- |
-| Support de cours — 151 pages | [Ouvrir le PDF](IA_BRGM.pdf) | — |
-| Churn : analyse exploratoire et régression logistique | [Lire le TP complet](Classification_Churn_RL_Correction.ipynb) · [Ouvrir dans Colab](https://colab.research.google.com/github/RMoulla/IA_BRGM/blob/main/Classification_Churn_RL_Correction.ipynb) | [customer_churn.csv](customer_churn.csv) |
-| Analyse de sentiments | [Lire le corrigé](Sentiment_Analysis_Recommandation_Correction.ipynb) · [Ouvrir dans Colab](https://colab.research.google.com/github/RMoulla/IA_BRGM/blob/main/Sentiment_Analysis_Recommandation_Correction.ipynb) | [Reviews.csv](Reviews.csv) |
+| Support de cours — 130 pages | [Ouvrir le PDF](IA_BRGM.pdf) | — |
+| TP BRGM : analyse des données et modélisation | [Lire le TP](TP_Analyse_Donn%C3%A9es_BRGM.ipynb) · [Ouvrir dans Colab](https://colab.research.google.com/github/RMoulla/IA_BRGM/blob/main/TP_Analyse_Donn%C3%A9es_BRGM.ipynb) | [customer_churn.csv](customer_churn.csv) |
+| TP BRGM : classification de textes et analyse de sentiments | [Lire le TP](TP_Classfication_Reviews_BRGM.ipynb) · [Ouvrir dans Colab](https://colab.research.google.com/github/RMoulla/IA_BRGM/blob/main/TP_Classfication_Reviews_BRGM.ipynb) | [Reviews.csv](Reviews.csv) |
 | Clustering de textes et visualisations Plotly | [Lire le notebook](TP_Clustering.ipynb) · [Ouvrir dans Colab](https://colab.research.google.com/github/RMoulla/IA_BRGM/blob/main/TP_Clustering.ipynb) | Corpus 20 Newsgroups, téléchargé par le notebook |
 
 Le support peut aussi être [téléchargé directement](https://raw.githubusercontent.com/RMoulla/IA_BRGM/main/IA_BRGM.pdf).
+
+Le cours s’arrête à la diapositive **« LLMs propriétaires vs Open Source »**, incluse.
 
 ## Télécharger les fichiers
 
@@ -40,10 +42,12 @@ Le TP de clustering télécharge le corpus public 20 Newsgroups lors du premier 
 
 Les notebooks contiennent le code corrigé. Leurs anciennes sorties ont été effacées : les tableaux et graphiques apparaîtront après exécution. Aucune clé API n’est nécessaire pour ces TP.
 
+La dernière partie du TP d’analyse des données installe **Gradio**, puis lance une interface de prédiction du churn. Une connexion Internet est nécessaire ; la dernière cellule reste active et fournit un lien de partage temporaire.
+
 ## Repères pour les exercices
 
-- **Churn** : exploration de 900 observations, visualisations, séparation entraînement/test, régression logistique avec `statsmodels`, puis accuracy, précision, rappel et F1. Le seuil de classification est fixé à 0,25 et peut être modifié pour comparer les résultats.
-- **Analyse de sentiments** : nettoyage de 644 avis de jeux vidéo, représentation par comptage des mots, régression logistique, Random Forest et Naive Bayes. Le TP compare les prédictions et les courbes ROC, et examine les mots associés aux recommandations positives ou négatives.
+- **Analyse des données BRGM** : exploration de 900 observations, visualisations, modélisation statistique avec `statsmodels`, séparation entraînement/test et prédiction du churn par régression logistique. Évaluation par accuracy, précision, rappel et F1 avec un seuil de 0,5, puis interface Gradio.
+- **Classification de textes BRGM** : représentation de 644 avis de jeux vidéo par comptage des mots, séparation entraînement/test, régression logistique, rapport de classification et examen des mots associés aux recommandations positives ou négatives.
 - **Clustering** : représentation TF-IDF, K-means, projection par ACP et exploration interactive des documents et des mots dominants avec Plotly.
 
 ## Complément : pluie et glissement de terrain
@@ -57,7 +61,7 @@ Il s’agit d’un exemple pédagogique fondé sur un scénario synthétique, sa
 Ouvrez les notebooks avec Jupyter ou un éditeur compatible, dans le dossier contenant les CSV. Les bibliothèques utilisées sont :
 
 ```bash
-python -m pip install numpy pandas scikit-learn matplotlib seaborn statsmodels plotly
+python -m pip install numpy pandas scikit-learn matplotlib seaborn statsmodels plotly gradio
 ```
 
 ## En cas de difficulté
